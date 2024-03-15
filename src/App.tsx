@@ -1,5 +1,5 @@
 import './App.css';
-import { TranslateApp } from './pages/translate-app';
+import { TranslateApp } from './pages/TranslateApp';
 
 function App() {
 

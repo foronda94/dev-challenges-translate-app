@@ -11,4 +11,17 @@ export const Translate = styled.div`
     text-align: center;
     padding-top: 80px;
   }
+
+  .box-translate {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 50px 40px;
+  }
+
+  @media (max-width: 1024px) {
+    .box-translate {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
