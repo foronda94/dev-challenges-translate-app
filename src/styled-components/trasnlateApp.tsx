@@ -24,4 +24,10 @@ export const Translate = styled.div`
       grid-template-columns: 1fr;
     }
   }
+
+  @media (max-width: 640px) {
+    .box-translate {
+      margin: 50px 20px;
+    }
+  }
 `;
