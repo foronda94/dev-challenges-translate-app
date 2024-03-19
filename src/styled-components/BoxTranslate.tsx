@@ -1,18 +1,26 @@
 import styled from "styled-components";
 import { ColorsApp } from "../utilies/ColorApp";
 
-
-export const Box = styled.div`
-
-  min-width: calc(50vw - 5vw);
-  height: 50vh;
-  background-color: ${ColorsApp.slateTransparent};
-  border: 0.1px solid #fff;
+export const Box = styled.div<{ background: string }>`
+  height: auto;
+  background-color: ${props => props.background || ColorsApp.slateTransparent};
+  border: 0.1px solid ${ColorsApp.steel};
   border-radius: 20px;
-  padding: 0 20px;
+  padding: 0 20px 20px;
+
+  .box-header__display-translation {
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .box-header__display {
+    width: 20vw;
+  }
 
   .box-translate__header {
     display: flex;
+    justify-content: space-between;
     height: 80px;
     width: 100%;
     padding: 20px 0px 20px 10px;
@@ -22,7 +30,16 @@ export const Box = styled.div`
 
   .box-translate__header-button {
     margin-top: 12px;
-    margin-left: 2vw;
+    background-color: transparent;
+    border: none;
+    color: ${ColorsApp.steel};
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .box-translate__header-button-expandDown {
+    margin-top: 17px;
     background-color: transparent;
     border: none;
     color: ${ColorsApp.steel};
@@ -60,13 +77,14 @@ export const Box = styled.div`
   }
 
   .box-translate__footer {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
   }
 
   .box-translate__footer div {
     display: flex;
+    align-items: center;
   }
 
   .box-translate__footer-span {
@@ -80,20 +98,48 @@ export const Box = styled.div`
     margin-right: 8px;
   }
 
+  .mt-2 {
+    margin-top: 8px;
+  }
+
   .box-translate__footer-img {
     height: 23px;
   }
 
   .box-translate__footer-button {
-    width: 10vw;
+    width: 150px;
     height: 45px;
-    background: #3762e4;
-    border: 1px solid white;
+    background: ${ColorsApp.blueAzure};
+    border: 1px solid ${ColorsApp.babyBlue};
     border-radius: 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     color: white;
+  }
+
+  @media (max-width: 1024px) {
+    .box-header__display-translation {
+      width: 40vw;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box-header__display {
+      width: 30vw;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .box-header__display-translation {
+      width: 60vw;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box-header__display {
+      width: 40vw;
+    }
   }
   
 `;

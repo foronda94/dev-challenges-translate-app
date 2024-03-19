@@ -16,7 +16,7 @@ export const Translate = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin: 50px 40px;
+    margin: 50px 70px;
   }
 
   @media (max-width: 1024px) {
