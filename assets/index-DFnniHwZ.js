@@ -61,6 +61,12 @@ Error generating stack: `+o.message+`
       grid-template-columns: 1fr;
     }
   }
+
+  @media (max-width: 640px) {
+    .box-translate {
+      margin: 50px 20px;
+    }
+  }
 `,Ih="/dev-challenges-translate-app/assets/logo-CSTbu9j2.svg",he={midnight:"#040711",slate:"#394150",steel:"#4D5562",silver:"#CDD5E0",whiteSmoke:"#F9FAFB",blueAzure:"#3662E3",babyBlue:"#7CA9F3",midnightTransparent:"#212936cc",slateTransparent:"#121826cc"},Oh=Gu.div`
   height: auto;
   background-color: ${e=>e.background||he.slateTransparent};
