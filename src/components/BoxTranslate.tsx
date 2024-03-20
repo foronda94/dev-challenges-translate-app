@@ -5,7 +5,7 @@ import alfa from '../assets/img/Sort_alfa.svg';
 import expandDown from '../assets/img/Expand_down.svg';
 import horizontalBtn from '../assets/img/Horizontal_top_left_main.svg';
 
-export const BoxTranslate = ({ activeFilter, backgroundColor, detectLanguage, handleFilterClick, handleChangeText, initialText, translation }: any) => {
+export const BoxTranslate = ({ activeFilter, backgroundColor, detectLanguage, handleChangeText, handleFilterClick, handleTranslated, initialText, translation }: any) => {
 
   
   return (
@@ -14,20 +14,20 @@ export const BoxTranslate = ({ activeFilter, backgroundColor, detectLanguage, ha
         <div className={translation === true ? "box-header__display-translation" : "box-header__display-translation box-header__display"}>
           {detectLanguage.length > 0 ? <p>{detectLanguage}</p> : "" }
           <button
-            className={ activeFilter === 'firstFilter' ? 'box-translate__header-button active' : 'box-translate__header-button' } 
-            onClick={ () => handleFilterClick('firstFilter', translation) }
+            className={ activeFilter === 'englishFilter' ? 'box-translate__header-button active' : 'box-translate__header-button' } 
+            onClick={ () => handleFilterClick('englishFilter', translation, 'en') }
           >
             English
           </button>
           <button
-            className={ activeFilter === "secondFilter" ? 'box-translate__header-button active' : 'box-translate__header-button' }
-            onClick={ () => handleFilterClick('secondFilter', translation) }
+            className={ activeFilter === "frenchFilter" ? 'box-translate__header-button active' : 'box-translate__header-button' }
+            onClick={ () => handleFilterClick('frenchFilter', translation, 'fr') }
           >
             French
           </button>
           <button
-            className={ activeFilter === "thirdFilter" ? 'box-translate__header-button active' : 'box-translate__header-button' }
-            onClick={ () => handleFilterClick('thirdFilter', translation) }
+            className={ activeFilter === "spanishFilter" ? 'box-translate__header-button active' : 'box-translate__header-button' }
+            onClick={ () => handleFilterClick('spanishFilter', translation, 'es') }
           >
             Spanish
           </button>
@@ -68,7 +68,7 @@ export const BoxTranslate = ({ activeFilter, backgroundColor, detectLanguage, ha
         {
           translation === true 
           ?
-            <button className="box-translate__footer-button">
+            <button className="box-translate__footer-button" onClick={handleTranslated}>
               <span>
                 <img src={alfa} alt="alfa" />
               </span>
